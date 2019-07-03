@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省市联动</title>
+</head>
+<body>
+<select name="province" id="pro">
+    <option value="0">--请选择--</option>
+    <option value="1">--湖北省--</option>
+    <option value="2">--福建省--</option>
+    <option value="3">--广西省--</option>
+    <option value="4">--江西省--</option>
+</select>
+<select name="city" id="ct">
+    <option value="0">--请选择--</option>
+</select>
+
+
+<script>
+    window.onload = function () {
+
+        var sel = document.getElementById("pro");
+        sel.onchange = function () {
+            var ct = document.getElementById("ct");
+            ct.focus();
+            ct.innerHTML=" <option value='0'>--请选择--</option>";
+            switch (sel.selectedIndex) {
+                case 0:
+                    break;
+                case 1:
+                    ct.innerHTML += "<option value='0'>武汉市</option><option value='1'>应城市</option>" +
+                        "<option value='2'>孝感市</option><option value='3'>荆门市</option>";
+                    break;
+
+                case 2:
+                    ct.innerHTML += "<option value='0'>厦门市</option><option value='1'>漳州市</option>" +
+                        "<option value='2'>泉州市</option><option value='3'>莆田市</option  >";
+                    break;
+                case 3:
+                    ct.innerHTML += "<option value='0'>南宁市</option><option value='1'>崇左市</option>" +
+                        "<option value='2'>桂林市</option><option value='3'>北海市</option  >";
+                    break;
+                case 4:
+                    ct.innerHTML += "<option value='0'>南昌市</option><option value='1'>抚州市</option>" +
+                        "<option value='2'>吉安市</option><option value='3'>景德镇市</option  >";
+                    break;
+            }
+
+
+        }
+
+
+    };
+</script>
+</body>
+</html>
